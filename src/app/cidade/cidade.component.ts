@@ -23,4 +23,10 @@ export class CidadeComponent implements OnInit{
     })
   }
 
+  delete(cidade: Cidade){
+    this.servise.delete(cidade).subscribe({
+      next: () => this.loadCidades()
+    })
+  } 
+
 }

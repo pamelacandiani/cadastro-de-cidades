@@ -3,20 +3,26 @@
 	<table class="table table-striped table-dark">
 		<thead>
 			<tr>
+				<th scope="col">ID</th>
 				<th scope="col">CEP</th>
 				<th scope="col">Cidade</th>
 				<th scope="col">Estado</th>
 				<th scope="col">População</th>
+				<th scope="col">Opções</th>
 			</tr>
 		</thead>
 	  <tbody>	
 		<tr *ngFor="let cidade of cidade">
-				<th scope="row">{{cidade.CEP}}</th>
-				<td>{{cidade.Cidade}}</td>
-				<td>{{cidade.Estado}}</td>
-				<td>{{cidade.Populacao}}</td>
+				<th scope="row">{{cidade.id}}</th>
+				<th>{{cidade.cep}}</th>
+				<td>{{cidade.cidade}}</td>
+				<td>{{cidade.estado}}</td>
+				<td>{{cidade.populacao}}</td>
+
+				<td><button class="btn btn-danger" (click)="delete(cidade)">Remover</button></td>
 		</tr>
 	  </tbody>
 	</table>
+
 </div>
 

@@ -1,7 +1,8 @@
 export interface Cidade{
-    "CEP": number,
-    "Cidade": string,
-    "Estado": string,
-    "Populacao": number
+    id: number,
+    cep: number,
+    cidade: string,
+    estado: string,
+    populacao: number
     
 }
