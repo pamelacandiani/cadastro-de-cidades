@@ -1,3 +1,17 @@
 {
+    "cidades": [
+        {
+            "CEP": 1,
+            "Cidade": "ITU",
+            "Estado": "SÃO PAULO",
+            "Populacao": 200000
+        },
+        {
+            "CEP": 2,
+            "Cidade": "TIETE",
+            "Estado": "SÃO PAULO",
+            "Populacao": 10000
+        }
+    ]
   
 }

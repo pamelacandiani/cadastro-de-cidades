@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cidade } from '../../cidade';
+import { CidadeService } from '../cidade.service';
 
 @Component({
   selector: 'app-cidade',
@@ -8,19 +9,18 @@ import { Cidade } from '../../cidade';
 })
 export class CidadeComponent implements OnInit{
 
-  cidade: Cidade[] = [
-    {
-        "CEP": 1,
-        "Cidade": "ITU",
-        "Estado": "SÃO PAULO",
-        "Populacao": 200.000
-    },
-  ]
+  cidade: Cidade[] = [];
 
-
+  constructor(private servise: CidadeService){}
 
   ngOnInit(): void {
-   
+  this.loadCidades();
+  }
+
+  loadCidades(){
+    this.servise.getCidades().subscribe({
+      next: data => this.cidade = data
+    })
   }
 
 }
