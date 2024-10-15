@@ -11,9 +11,11 @@
 				<th scope="col">Opções</th>
 			</tr>
 		</thead>
-	  <tbody>	
+	  <tbody>
 		<tr *ngFor="let cidade of cidade">
-				<th scope="row">{{cidade.id}}</th>
+
+        <td> <a [routerLink]="['/cidade', cidade.id]"> {{cidade.id}} </a></td>
+
 				<th>{{cidade.cep}}</th>
 				<td>{{cidade.cidade}}</td>
 				<td>{{cidade.estado}}</td>

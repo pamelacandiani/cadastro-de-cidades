@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Cadastro de Cidade</h1>
+  <form [formGroup]="formGroupCidade">
+    <div class="mb-3">
+      <label for="name" class="form-label">CEP</label>
+      <input formControlName="cep" type="text " class="form-control" id="cep" placeholder="Digite o CEP">
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Cidade</label>
+      <input formControlName="cidade" type="text " class="form-control" id="cidade" placeholder="Digite o nome da cidade">
+    </div>
+    <div class="mb-3">
+      <label for="category" class="form-label">Estado</label>
+      <input formControlName="estado" type="text " class="form-control" id="estado" placeholder="Digite o nome do Estado">
+    </div>
+    <div class="mb-3">
+      <label for="category" class="form-label">População</label>
+      <input formControlName="populacao" type="text " class="form-control" id="populacao" placeholder="Digite a população da cidade">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="update()">Salvar</button>
+  </form>
+</div>
