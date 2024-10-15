@@ -6,7 +6,8 @@ import { CidadeFormComponent } from './cidade-form/cidade-form.component';
 const routes: Routes = [
   {path:'', redirectTo : '/cidade', pathMatch: 'full'},
   {path: 'cidade', component: CidadeComponent},
-  {path: 'cidade/:id', component: CidadeFormComponent}
+  {path: 'cidade/:id', component: CidadeFormComponent},
+  {path: 'cidades', component: CidadeFormComponent}
 
 ];
 

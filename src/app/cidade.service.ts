@@ -25,6 +25,10 @@ export class CidadeService {
   }
 
   uptade(cidade: Cidade): Observable<Cidade>{
-    return this.http.put<Cidade>('http://localhost:3000/cidades' + cidade.id, cidade)
+    return this.http.put<Cidade>('http://localhost:3000/cidades/' + cidade.id, cidade)
+  }
+
+  save(cidade: Cidade): Observable<Cidade>{
+    return this.http.post<Cidade>('http://localhost:3000/cidades/', cidade)
   }
 }
