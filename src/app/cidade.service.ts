@@ -9,26 +9,27 @@ import { Observable } from 'rxjs';
 
 export class CidadeService {
 
+  url='http://localhost:3000/cidades'
 
   constructor(private http:HttpClient) { }
 
   getCidades(): Observable<Cidade []>{
-    return this.http.get<Cidade []>('http://localhost:3000/cidades')
+    return this.http.get<Cidade []>(this.url)
   }
 
   getCidadesbyId(id:number): Observable<Cidade>{
-    return this.http.get<Cidade>('http://localhost:3000/cidades/' + id)
+    return this.http.get<Cidade>(`${this.url}/${id}`)
   }
 
   delete(cidade: Cidade): Observable<void>{
-    return this.http.delete<void>('http://localhost:3000/cidades/' + cidade.id)
+    return this.http.delete<void>(`${this.url}/${cidade.id}`)
   }
 
-  uptade(cidade: Cidade): Observable<Cidade>{
-    return this.http.put<Cidade>('http://localhost:3000/cidades/' + cidade.id, cidade)
+  update(cidade: Cidade): Observable<Cidade>{
+    return this.http.put<Cidade>(`${this.url}/${cidade.id}`, cidade)
   }
 
   save(cidade: Cidade): Observable<Cidade>{
-    return this.http.post<Cidade>('http://localhost:3000/cidades/', cidade)
+    return this.http.post<Cidade>(this.url, cidade)
   }
 }
