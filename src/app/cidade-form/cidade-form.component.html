@@ -17,8 +17,8 @@
       <label for="category" class="form-label">População</label>
       <input formControlName="populacao" type="text " class="form-control" id="populacao" placeholder="Digite a população da cidade">
     </div>
-    <button type="button" class="btn btn-primary" (click)="update()">Alterar</button>
+      <button *ngIf="isEditing" type="button" class="btn btn-primary" (click)="update()">Alterar</button>
 
-    <button type="button" class="btn btn-primary" (click)="save()">CRIAR</button>
+      <button *ngIf="!isEditing" type="button" class="btn btn-primary" (click)="save()">CRIAR</button>
   </form>
 </div>

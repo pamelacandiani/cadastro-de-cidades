@@ -13,6 +13,8 @@ export class CidadeFormComponent implements OnInit{
 
   formGroupCidade: FormGroup;
 
+  isEditing: boolean = false;
+
   constructor(private router: Router,
     private activeRoute: ActivatedRoute,
     private service: CidadeService,
@@ -32,7 +34,10 @@ export class CidadeFormComponent implements OnInit{
 
   ngOnInit(): void {
     const id = Number(this.activeRoute.snapshot.paramMap.get("id"));
-    this.loadCidade(id);
+    if(id != 0){
+      this.isEditing=true;
+      this.loadCidade(id);
+    }
   }
 
   loadCidade(id: number){
@@ -42,7 +47,7 @@ export class CidadeFormComponent implements OnInit{
   }
 
   update(){
-    this.service.uptade(this.formGroupCidade.value).subscribe({
+    this.service.update(this.formGroupCidade.value).subscribe({
       next: () => this.router.navigate(['cidade'])
     });
   }
